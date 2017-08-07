@@ -98,6 +98,25 @@
             android:layout_height="wrap_content"
             android:text="페이스북으로 로그인"/>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/hpBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="홈페이지 방문"/>
+
+            <Button
+                android:id="@+id/mailBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="메일 문의하기"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 
