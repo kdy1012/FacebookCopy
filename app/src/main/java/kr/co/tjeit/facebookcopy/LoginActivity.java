@@ -1,9 +1,11 @@
 package kr.co.tjeit.facebookcopy;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
@@ -11,6 +13,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     Button loginBtn;
     Button signUpBtn;
     Button facebookLoginBtn;
+    EditText idEdt;
+    EditText pwEdt;
 
 
     @Override
@@ -33,6 +37,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     void bindViews() {
+        idEdt = (EditText) findViewById(R.id.idEdt);
+        pwEdt = (EditText) findViewById(R.id.pwEdt);
         loginBtn = (Button) findViewById(R.id.loginBtn);
         signUpBtn = (Button) findViewById(R.id.signUpBtn);
         facebookLoginBtn = (Button) findViewById(R.id.facebookLoginBtn);
@@ -43,10 +49,22 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         // 모든 버튼에 대한 클릭 이벤트를 처리 할 수 있음.
 
         if (v.getId() == R.id.loginBtn) {
-            Toast.makeText(this, "로그인 버튼!", Toast.LENGTH_SHORT).show();
+            String inputId = idEdt.getText().toString();
+            String inputPw = pwEdt.getText().toString();
+            if (inputId.equals("user") && inputPw.equals("1234")) {
+                Intent myIntent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(myIntent);
+                finish();
+            }
+            else {
+                Toast.makeText(this, "로그인에 실패했습니다.\n아이디와 비번을 확인해주세요.", Toast.LENGTH_SHORT).show();
+            }
         }
-        else {
-            Toast.makeText(this, "그 외의 버튼이 눌림!!", Toast.LENGTH_SHORT).show();
+        else if (v.getId() == R.id.signUpBtn) {
+            Toast.makeText(this, "회원가입 버튼!", Toast.LENGTH_SHORT).show();
+        }
+        else if (v.getId() == R.id.facebookLoginBtn) {
+            Toast.makeText(this, "페이스북 로그인", Toast.LENGTH_SHORT).show();
         }
 
         
