@@ -11,6 +11,7 @@ import javax.crypto.spec.PSource;
 
 import kr.co.tjeit.facebookcopy.fragment.FriendRequestFragment;
 import kr.co.tjeit.facebookcopy.fragment.NewsfeedFragment;
+import kr.co.tjeit.facebookcopy.fragment.NotificationFragment;
 import kr.co.tjeit.facebookcopy.fragment.SeeMoreFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
             if (position == 0) {
 
-                return new NewsfeedFragment();
+                return new NotificationFragment();
             }
             else if (position == 1) {
 
