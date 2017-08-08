@@ -20,11 +20,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".TestActivity" />
-        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".LoginActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".IntentPracticeActivity" />
-        <activity android:name=".WebViewPracticeActivity"></activity>
-        <activity android:name=".ReplyListActivity"></activity>
+        <activity android:name=".WebViewPracticeActivity" />
+        <activity android:name=".ReplyListActivity" />
+        <activity android:name=".ChattingActivity"></activity>
     </application>
 
 </manifest>

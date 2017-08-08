@@ -150,6 +150,7 @@
         android:orientation="horizontal">
 
         <LinearLayout
+            android:id="@+id/newsfeedBtnLayout"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -169,6 +170,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/friendRequestBtnLayout"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -188,6 +190,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/messageBtnLayout"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -207,6 +210,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/notificationBtnLayout"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -226,6 +230,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/seeMoreBtnLayout"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
