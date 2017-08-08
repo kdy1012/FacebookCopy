@@ -3,9 +3,11 @@ package kr.co.tjeit.facebookcopy.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import kr.co.tjeit.facebookcopy.MainActivity;
@@ -42,6 +44,14 @@ public class FriendRequestFragment extends Fragment {
 
     private void setupEvents() {
         // 객체들이 터치된 이벤트를 처리
+
+        friendRequestListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Log.d("터치이벤트", position+"번 줄에서 발생!");
+            }
+        });
+
     }
 
     private void setValues() {

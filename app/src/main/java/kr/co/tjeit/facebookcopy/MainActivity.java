@@ -13,6 +13,7 @@ import kr.co.tjeit.facebookcopy.fragment.FriendRequestFragment;
 import kr.co.tjeit.facebookcopy.fragment.NewsfeedFragment;
 import kr.co.tjeit.facebookcopy.fragment.NotificationFragment;
 import kr.co.tjeit.facebookcopy.fragment.SeeMoreFragment;
+import kr.co.tjeit.facebookcopy.util.GlobalDatas;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mainViewPager = (ViewPager) findViewById(R.id.mainViewPager);
+
+        GlobalDatas.initDatas();
         mainViewPager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
     }
 

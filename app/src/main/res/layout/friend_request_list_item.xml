@@ -22,6 +22,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/nameTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="사람 이름이 나옴"/>
@@ -37,6 +38,7 @@
                     android:text="함께 아는 친구"/>
 
                 <TextView
+                    android:id="@+id/friendCountTxt"
                     android:layout_marginLeft="5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -56,12 +58,16 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textColor="#FFFFFF"
+                    android:focusableInTouchMode="false"
+                    android:focusable="false"
                     android:text="수락"/>
 
                 <Button
                     android:layout_marginLeft="5dp"
                     android:background="@drawable/gray_boader_round_btn"
                     android:layout_width="0dp"
+                    android:focusableInTouchMode="false"
+                    android:focusable="false"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="삭제"/>
