@@ -14,7 +14,12 @@ public class NotificationData {
     // 2 : ~~가 내 글을 좋아합니다.
     private int minuteAgo;
 //    private Calendar createAt; // 실제로는 이게 더 적합함.
-    // 2분 이내 : 방금 전, 2~59 : ??분 전, 60~119분 : 1시간 전
+    // 2분 이내 : 방금 전
+    // 2~40 : ??분 전
+    // 41~90분 : 한시간 전
+    // 91~510분 : ??시간 전 Ex.  91~150 2시간 전. 151 ~ 210 3시간 전.
+    // 211 ~ 270 4시간 전. => 알고리즘 (도전) /60 해결 안됨.
+    // 그 외 : 오래 전
 
 
     public NotificationData() {

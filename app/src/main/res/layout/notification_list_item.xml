@@ -23,6 +23,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/notificationTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="알림의 내용이 매우 길게 들어올 자리이므로 줄바꿈이 될때까지 테스트 문자를 남겨봅니다."/>
@@ -39,6 +40,7 @@
                     android:src="@mipmap/ic_launcher_round"/>
 
                 <TextView
+                    android:id="@+id/minuteAgoTxt"
                     android:textColor="#5181C1"
                     android:layout_marginLeft="3dp"
                     android:layout_width="wrap_content"

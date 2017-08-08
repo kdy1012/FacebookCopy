@@ -31,11 +31,11 @@ public class GlobalDatas {
 
 
         notificationDatas.clear();
-        notificationDatas.add(new NotificationData("", "10명이 내 글을 좋아합니다.", 1, 40));
-        notificationDatas.add(new NotificationData("", "~~가 내 글에 댓글을 남겼습니다.", 2, 60));
-        notificationDatas.add(new NotificationData("", "~~가 회원님을 팔로우 합니다.", 3, 120));
-        notificationDatas.add(new NotificationData("", "~~가 내 댓글을 좋아합니다.", 4, 500));
-        notificationDatas.add(new NotificationData("", "~~가 친구 요청을 수락했습니다.", 5, 2400));
+        notificationDatas.add(new NotificationData("", "10명이 내 글을 좋아합니다.", 1, 1));
+        notificationDatas.add(new NotificationData("", "~~가 내 글에 댓글을 남겼습니다.", 2, 40));
+        notificationDatas.add(new NotificationData("", "~~가 회원님을 팔로우 합니다.", 3, 70));
+        notificationDatas.add(new NotificationData("", "~~가 내 댓글을 좋아합니다.", 4, 230));
+        notificationDatas.add(new NotificationData("", "~~가 친구 요청을 수락했습니다.", 5, 600));
 
     }
 
