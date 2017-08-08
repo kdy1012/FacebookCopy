@@ -9,14 +9,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
+import java.util.Locale;
 
 import kr.co.tjeit.facebookcopy.MainActivity;
 import kr.co.tjeit.facebookcopy.R;
 import kr.co.tjeit.facebookcopy.ReplyListActivity;
 import kr.co.tjeit.facebookcopy.data.NewsfeedData;
+import kr.co.tjeit.facebookcopy.util.TimeAgoUtil;
 
 /**
  * Created by user on 2017-08-08.
@@ -45,7 +49,34 @@ public class NewsfeedAdapter extends ArrayAdapter<NewsfeedData> {
             row = inf.inflate(R.layout.newsfeed_list_item, null);
         }
 
-//        NewsfeedData data = mList.get(position);
+        NewsfeedData data = mList.get(position);
+
+        LinearLayout previewLayout = (LinearLayout) row.findViewById(R.id.previewLayout);
+
+        // Adapter의 getView에서 if를 통해 작업할때는
+        // 반드시 else의 경우도 작업해주자.
+        // 왜? Adapter를 활용하는 View는 재활용이 기본옵션.
+        if (data.getLinkUrl().length() == 0) {
+            previewLayout.setVisibility(View.GONE);
+        }
+        else {
+            previewLayout.setVisibility(View.VISIBLE);
+        }
+
+
+        String minuteStr = TimeAgoUtil.getTimeAgoString(data.getMinuteAgo());
+        TextView minuteAgoTxt = (TextView) row.findViewById(R.id.minuteAgoTxt);
+        minuteAgoTxt.setText(minuteStr);
+
+        TextView contentTxt = (TextView) row.findViewById(R.id.contentTxt);
+        contentTxt.setText(data.getContentText());
+
+
+        String likeCountStr = String.format(Locale.KOREA, "%,d개", data.getLikeCount());
+        TextView likeCountTxt = (TextView) row.findViewById(R.id.likeCountTxt);
+        likeCountTxt.setText(likeCountStr);
+
+
 
         Button likeBtn = (Button) row.findViewById(R.id.likeBtn);
         Button replyBtn = (Button) row.findViewById(R.id.replyBtn);
@@ -68,10 +99,6 @@ public class NewsfeedAdapter extends ArrayAdapter<NewsfeedData> {
         return row;
     }
 
-    @Override
-    public int getCount() {
-        return 10;
-    }
 }
 
 

@@ -21,6 +21,7 @@
             android:src="@mipmap/ic_launcher_round"/>
 
         <TextView
+            android:id="@+id/titleTxt"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
@@ -41,6 +42,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <LinearLayout
+            android:id="@+id/newsfeedUsageBtnsLayout"
             android:layout_width="match_parent"
             android:background="#F9F9F9"
             android:orientation="horizontal"
@@ -48,6 +50,7 @@
 
 
             <LinearLayout
+                android:id="@+id/statusBtnLayout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"

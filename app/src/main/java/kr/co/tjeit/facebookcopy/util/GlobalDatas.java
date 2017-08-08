@@ -41,6 +41,14 @@ public class GlobalDatas {
         notificationDatas.add(new NotificationData("", "~~가 내 댓글을 좋아합니다.", 4, 230));
         notificationDatas.add(new NotificationData("", "~~가 친구 요청을 수락했습니다.", 5, 600));
 
+
+        newsfeedDatas.clear();
+        newsfeedDatas.add(new NewsfeedData("http://naver.com", "", 2, "네이버로 링크를 걸어주는 뉴스피드입니다.", 12));
+        newsfeedDatas.add(new NewsfeedData("http://google.com", "", 10, "구글로 링크를 걸어주는 뉴스피드입니다.", 5));
+        newsfeedDatas.add(new NewsfeedData("", "", 45, "일기처럼 글만 적힌 뉴스피드.", 125));
+        newsfeedDatas.add(new NewsfeedData("", "", 230, "사진 올린 뉴스피드.", 2453));
+        newsfeedDatas.add(new NewsfeedData("", "", 800, "동영상 뉴스피드", 121371));
+
     }
 
 }
