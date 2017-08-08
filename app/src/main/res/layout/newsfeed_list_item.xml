@@ -77,6 +77,8 @@
                 android:src="@mipmap/ic_launcher"/>
 
             <LinearLayout
+                android:padding="5dp"
+                android:background="@drawable/newsfeed_link_background_box"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -124,18 +126,22 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/likeBtn"
+                    android:focusable="false"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="좋아요"/>
 
                 <Button
+                    android:focusable="false"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="댓글 달기"/>
 
                 <Button
+                    android:focusable="false"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"

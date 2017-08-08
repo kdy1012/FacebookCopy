@@ -10,6 +10,7 @@ import android.os.Bundle;
 import javax.crypto.spec.PSource;
 
 import kr.co.tjeit.facebookcopy.fragment.FriendRequestFragment;
+import kr.co.tjeit.facebookcopy.fragment.MessageFragment;
 import kr.co.tjeit.facebookcopy.fragment.NewsfeedFragment;
 import kr.co.tjeit.facebookcopy.fragment.NotificationFragment;
 import kr.co.tjeit.facebookcopy.fragment.SeeMoreFragment;
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return 3;
+            return 5;
         }
 
         @Override
@@ -44,11 +45,17 @@ public class MainActivity extends AppCompatActivity {
 
             if (position == 0) {
 
-                return new NotificationFragment();
+                return new NewsfeedFragment();
             }
             else if (position == 1) {
 
                 return new FriendRequestFragment();
+            }
+            else if (position == 2) {
+                return new MessageFragment();
+            }
+            else if (position == 3) {
+                return new NotificationFragment();
             }
             else {
                 return new SeeMoreFragment();

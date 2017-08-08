@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import kr.co.tjeit.facebookcopy.data.FriendRequestData;
+import kr.co.tjeit.facebookcopy.data.NewsfeedData;
 import kr.co.tjeit.facebookcopy.data.NotificationData;
 
 /**
@@ -14,6 +15,7 @@ public class GlobalDatas {
 
     public static List<FriendRequestData> friendRequestDatas = new ArrayList<>();
     public static List<NotificationData> notificationDatas = new ArrayList<>();
+    public static List<NewsfeedData> newsfeedDatas = new ArrayList<>();
 
     public static void initDatas() {
         friendRequestDatas.clear();
