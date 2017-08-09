@@ -1,5 +1,6 @@
 package kr.co.tjeit.facebookcopy;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -45,6 +46,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupEvents() {
+
+        statusBtnLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, EditStatusActivity.class);
+                startActivity(intent);
+            }
+        });
+
         newsfeedBtnLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -101,15 +111,12 @@ public class MainActivity extends AppCompatActivity {
                 }
 
 
-
                 // 뉴스피드일때만 버튼들을 보여주고, 그 외엔 숨김.
                 if (position == 0) {
                     newsfeedUsageBtnsLayout.setVisibility(View.VISIBLE);
-                }
-                else {
+                } else {
                     newsfeedUsageBtnsLayout.setVisibility(View.GONE);
                 }
-
 
 
             }
@@ -150,18 +157,14 @@ public class MainActivity extends AppCompatActivity {
             if (position == 0) {
 
                 return new NewsfeedFragment();
-            }
-            else if (position == 1) {
+            } else if (position == 1) {
 
                 return new FriendRequestFragment();
-            }
-            else if (position == 2) {
+            } else if (position == 2) {
                 return new MessageFragment();
-            }
-            else if (position == 3) {
+            } else if (position == 3) {
                 return new NotificationFragment();
-            }
-            else {
+            } else {
                 return new SeeMoreFragment();
             }
 
