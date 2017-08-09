@@ -78,6 +78,7 @@ public class ChattingActivity extends AppCompatActivity {
                     imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
                 }
 
+                // 리스트뷰 맨 밑으로 끌어내리기
                 chattingListView.setSelection(mAdapter.getCount() - 1);
 
             }

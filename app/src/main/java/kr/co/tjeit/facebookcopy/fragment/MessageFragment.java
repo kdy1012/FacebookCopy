@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import kr.co.tjeit.facebookcopy.ChattingActivity;
+import kr.co.tjeit.facebookcopy.MainActivity;
 import kr.co.tjeit.facebookcopy.R;
 import kr.co.tjeit.facebookcopy.adapter.MessageAdapter;
 import kr.co.tjeit.facebookcopy.util.GlobalDatas;
@@ -52,5 +53,6 @@ public class MessageFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
     }
 }
