@@ -14,6 +14,8 @@ import kr.co.tjeit.facebookcopy.data.NotificationData;
 
 public class GlobalDatas {
 
+    public static int loginUserId = 10;
+
     public static List<FriendRequestData> friendRequestDatas = new ArrayList<>();
     public static List<NotificationData> notificationDatas = new ArrayList<>();
     public static List<NewsfeedData> newsfeedDatas = new ArrayList<>();
