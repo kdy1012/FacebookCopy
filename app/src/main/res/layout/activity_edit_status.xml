@@ -16,6 +16,7 @@
         android:background="#EFEFEF">
 
         <Button
+            android:id="@+id/cancelBtn"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:background="#00000000"
@@ -33,6 +34,7 @@
             android:textColor="#000000"/>
 
         <Button
+            android:id="@+id/postBtn"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:background="#00000000"
@@ -86,6 +88,7 @@
 
 
     <EditText
+        android:id="@+id/postContentEdt"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:background="#00000000"
@@ -98,28 +101,24 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#EFEFEF"/>
-
         <LinearLayout
+            android:id="@+id/photoBtnLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:gravity="center_vertical"
+            android:orientation="horizontal"
             android:padding="10dp">
 
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:src="@mipmap/ic_launcher_round"/>
+                android:src="@mipmap/ic_launcher_round" />
 
             <TextView
-                android:layout_marginLeft="10dp"
-                android:text="사진 / 동영상"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="사진 / 동영상" />
 
         </LinearLayout>
 
@@ -128,8 +127,14 @@
             android:layout_height="1dp"
             android:background="#EFEFEF"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#EFEFEF"/>
+
 
         <LinearLayout
+            android:id="@+id/liveBtnLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -154,6 +159,7 @@
             android:background="#EFEFEF"/>
 
         <LinearLayout
+            android:id="@+id/checkInBtnLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -178,6 +184,7 @@
             android:background="#EFEFEF"/>
 
         <LinearLayout
+            android:id="@+id/stickerBtnLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"

@@ -43,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
     private void setValues() {
         GlobalDatas.initDatas();
         mainViewPager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
+
+
     }
 
     private void setupEvents() {
@@ -55,37 +57,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        newsfeedBtnLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mainViewPager.setCurrentItem(0);
-            }
-        });
+        // 1. 메모리 절약
+        // 2. 코드 가독성 향상
 
-        friendRequestBtnLayout.setOnClickListener(new View.OnClickListener() {
+        View.OnClickListener pageChangeListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mainViewPager.setCurrentItem(1);
+                int pageNum = Integer.parseInt(v.getTag().toString());
+                mainViewPager.setCurrentItem(pageNum);
             }
-        });
-        messageBtnLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mainViewPager.setCurrentItem(2);
-            }
-        });
-        notificationBtnLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mainViewPager.setCurrentItem(3);
-            }
-        });
-        seeMoreBtnLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mainViewPager.setCurrentItem(4);
-            }
-        });
+        };
+
+        newsfeedBtnLayout.setOnClickListener(pageChangeListener);
+        friendRequestBtnLayout.setOnClickListener(pageChangeListener);
+        messageBtnLayout.setOnClickListener(pageChangeListener);
+        notificationBtnLayout.setOnClickListener(pageChangeListener);
+        seeMoreBtnLayout.setOnClickListener(pageChangeListener);
 
         mainViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
