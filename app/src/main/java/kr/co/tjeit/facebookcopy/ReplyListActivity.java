@@ -9,13 +9,16 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 
 import kr.co.tjeit.facebookcopy.adapter.ReplyAdapter;
+import kr.co.tjeit.facebookcopy.data.NewsfeedData;
 import kr.co.tjeit.facebookcopy.data.ReplyData;
 import kr.co.tjeit.facebookcopy.util.GlobalDatas;
 
@@ -29,10 +32,22 @@ public class ReplyListActivity extends AppCompatActivity {
     private Button likeBtn;
     private Button replyBtn;
 
+    NewsfeedData mNewsfeedData;
+    int mPosition = -1;
+    private android.widget.TextView postWriterNameTxt;
+    private android.widget.TextView postContentTxt;
+    private android.widget.TextView likeCountTxt;
+
+    // Ctrl + Shift + F => 프로젝트 전체에서 검색
+    // Ctrl + F => 파일 내부에서만 검색
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reply_list);
+        mNewsfeedData = (NewsfeedData) getIntent().getSerializableExtra("댓글달린뉴스피드");
+        mPosition = getIntent().getIntExtra("몇번째줄", -1);
         bindViews();
         setupEvents();
         setValues();
@@ -53,6 +68,11 @@ public class ReplyListActivity extends AppCompatActivity {
     }
 
     private void setValues() {
+
+        postWriterNameTxt.setText(mNewsfeedData.getWriterData().getUserName());
+        postContentTxt.setText(mNewsfeedData.getContentText());
+        likeCountTxt.setText(String.format(Locale.KOREA, "%,d개", mNewsfeedData.getLikeCount()));
+
         mAdapter = new ReplyAdapter(ReplyListActivity.this, replyDatas);
         replyList.setAdapter(mAdapter);
     }
@@ -62,7 +82,12 @@ public class ReplyListActivity extends AppCompatActivity {
         likeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(ReplyListActivity.this, "해당 게시물을 좋아합니다.", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(ReplyListActivity.this, "해당 게시물을 좋아합니다.", Toast.LENGTH_SHORT).show();
+                mNewsfeedData.setLikeCount(mNewsfeedData.getLikeCount()+1);
+
+                GlobalDatas.newsfeedDatas.get(mPosition).setLikeCount(mNewsfeedData.getLikeCount());
+
+                likeCountTxt.setText(String.format(Locale.KOREA, "%,d개", mNewsfeedData.getLikeCount()));
             }
         });
 
@@ -141,5 +166,8 @@ public class ReplyListActivity extends AppCompatActivity {
         this.replyList = (ListView) findViewById(R.id.replyList);
         this.replyBtn = (Button) findViewById(R.id.replyBtn);
         this.likeBtn = (Button) findViewById(R.id.likeBtn);
+        this.likeCountTxt = (TextView) findViewById(R.id.likeCountTxt);
+        this.postContentTxt = (TextView) findViewById(R.id.postContentTxt);
+        this.postWriterNameTxt = (TextView) findViewById(R.id.postWriterNameTxt);
     }
 }

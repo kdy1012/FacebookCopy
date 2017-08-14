@@ -42,14 +42,17 @@ public class NewsfeedAdapter extends ArrayAdapter<NewsfeedData> {
 
     @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+    public View getView(final int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View row = convertView;
         if (row == null) {
             // 거의 반드시 딱 한줄만 if문 안에 들어옴.
             row = inf.inflate(R.layout.newsfeed_list_item, null);
         }
 
-        NewsfeedData data = mList.get(position);
+        final NewsfeedData data = mList.get(position);
+
+        // 왜 final을 붙여야 에러가 안나지?
+        // final : 수정이 불가능한 변수로 굳히기.
 
         LinearLayout previewLayout = (LinearLayout) row.findViewById(R.id.previewLayout);
 
@@ -94,6 +97,8 @@ public class NewsfeedAdapter extends ArrayAdapter<NewsfeedData> {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, ReplyListActivity.class);
+                intent.putExtra("댓글달린뉴스피드", data);
+                intent.putExtra("몇번째줄", position);
                 mContext.startActivity(intent);
             }
         });
