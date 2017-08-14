@@ -1,5 +1,6 @@
 package kr.co.tjeit.facebookcopy.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -12,6 +13,7 @@ import android.widget.ListView;
 
 import kr.co.tjeit.facebookcopy.MainActivity;
 import kr.co.tjeit.facebookcopy.R;
+import kr.co.tjeit.facebookcopy.ViewUserInfoActivity;
 import kr.co.tjeit.facebookcopy.adapter.FriendRequestAdapter;
 import kr.co.tjeit.facebookcopy.util.GlobalDatas;
 
@@ -48,7 +50,9 @@ public class FriendRequestFragment extends Fragment {
         friendRequestListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Log.d("터치이벤트", position+"번 줄에서 발생!");
+                Intent intent = new Intent(getActivity(), ViewUserInfoActivity.class);
+                intent.putExtra("친구요청데이터", GlobalDatas.friendRequestDatas.get(position));
+                startActivity(intent);
             }
         });
 

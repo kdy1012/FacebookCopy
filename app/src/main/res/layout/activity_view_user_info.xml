@@ -47,6 +47,7 @@
                 android:layout_height="100dp" />
 
             <TextView
+                android:id="@+id/userNameTxt"
                 android:layout_marginTop="15dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -55,6 +56,7 @@
                 android:textSize="20sp"/>
 
             <TextView
+                android:id="@+id/commonFriendsCountTxt"
                 android:layout_marginTop="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
