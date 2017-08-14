@@ -2,6 +2,7 @@ package kr.co.tjeit.facebookcopy;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.Locale;
@@ -14,6 +15,7 @@ public class ViewUserInfoActivity extends AppCompatActivity {
     private android.widget.TextView userNameTxt;
     private android.widget.TextView commonFriendsCountTxt;
     private android.widget.TextView textView;
+    private android.widget.LinearLayout messageBtnLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,8 +41,8 @@ public class ViewUserInfoActivity extends AppCompatActivity {
 
     private void bindViews() {
         this.textView = (TextView) findViewById(R.id.textView);
+        this.messageBtnLayout = (LinearLayout) findViewById(R.id.messageBtnLayout);
         this.commonFriendsCountTxt = (TextView) findViewById(R.id.commonFriendsCountTxt);
         this.userNameTxt = (TextView) findViewById(R.id.userNameTxt);
-
     }
 }
