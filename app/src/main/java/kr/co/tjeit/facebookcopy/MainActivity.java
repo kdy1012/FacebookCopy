@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private android.widget.TextView titleTxt;
     private LinearLayout statusBtnLayout;
     private LinearLayout newsfeedUsageBtnsLayout;
+    private LinearLayout photoBtnLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,10 +50,22 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupEvents() {
 
+        // 이벤트 처리 모음
+
+
+
         statusBtnLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, EditStatusActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        photoBtnLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, AddPhotoActivity.class);
                 startActivity(intent);
             }
         });
@@ -124,6 +137,7 @@ public class MainActivity extends AppCompatActivity {
         this.newsfeedBtnLayout = (LinearLayout) findViewById(R.id.newsfeedBtnLayout);
         this.mainViewPager = (ViewPager) findViewById(R.id.mainViewPager);
         this.newsfeedUsageBtnsLayout = (LinearLayout) findViewById(R.id.newsfeedUsageBtnsLayout);
+        this.photoBtnLayout = (LinearLayout) findViewById(R.id.photoBtnLayout);
         this.statusBtnLayout = (LinearLayout) findViewById(R.id.statusBtnLayout);
         this.titleTxt = (TextView) findViewById(R.id.titleTxt);
     }

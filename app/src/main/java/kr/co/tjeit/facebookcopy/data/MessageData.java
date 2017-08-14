@@ -7,25 +7,26 @@ import java.util.Calendar;
  */
 
 public class MessageData {
-    private int sendUserId;
+
+    private UserData sendUserData;
     private String content;
     private Calendar sendTime;
 
     public MessageData() {
     }
 
-    public MessageData(int sendUserId, String content, Calendar sendTime) {
-        this.sendUserId = sendUserId;
+    public MessageData(UserData sendUserData, String content, Calendar sendTime) {
+        this.sendUserData = sendUserData;
         this.content = content;
         this.sendTime = sendTime;
     }
 
-    public int getSendUserId() {
-        return sendUserId;
+    public UserData getSendUserData() {
+        return sendUserData;
     }
 
-    public void setSendUserId(int sendUserId) {
-        this.sendUserId = sendUserId;
+    public void setSendUserData(UserData sendUserData) {
+        this.sendUserData = sendUserData;
     }
 
     public String getContent() {
@@ -44,16 +45,4 @@ public class MessageData {
         this.sendTime = sendTime;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 

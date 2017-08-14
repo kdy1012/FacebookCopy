@@ -48,7 +48,7 @@ public class ChattingAdapter extends ArrayAdapter<MessageData> {
         LinearLayout myMessage = (LinearLayout) row.findViewById(R.id.myMessage);
         LinearLayout opponentMessage = (LinearLayout) row.findViewById(R.id.opponentMessage);
 
-        if (GlobalDatas.loginUserId == data.getSendUserId()) {
+        if (GlobalDatas.loginUserData.getUserId() == data.getSendUserData().getUserId()) {
             // 메세지를 보낸 사람이 나다
             myMessage.setVisibility(View.VISIBLE);
             opponentMessage.setVisibility(View.GONE);

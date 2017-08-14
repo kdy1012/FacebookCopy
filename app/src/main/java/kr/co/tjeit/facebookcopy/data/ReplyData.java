@@ -13,8 +13,13 @@ public class ReplyData {
     // 0이면 그냥 댓글. 1~그 외 : 대댓글.
 
     String writerName;
+
     String replyContent;
     Calendar createdAt;
+
+//    정석적인 방법.
+//    UserData writerData;
+    // 댓글 작성자도 UserData형태로 저장해 두는것이 올바른 방법.
 
     public ReplyData() {
     }

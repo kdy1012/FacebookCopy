@@ -87,7 +87,7 @@ public class ReplyListActivity extends AppCompatActivity {
                 }
 
                 replyDatas.add(index+1 ,new ReplyData(replyDatas.size()+1, parentId,
-                        GlobalDatas.loginUserName, inputString, Calendar.getInstance()));
+                        GlobalDatas.loginUserData.getUserName(), inputString, Calendar.getInstance()));
                 mAdapter.notifyDataSetChanged();
 
 

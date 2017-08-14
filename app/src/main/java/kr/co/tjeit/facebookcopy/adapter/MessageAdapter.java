@@ -43,11 +43,15 @@ public class MessageAdapter extends ArrayAdapter<MessageData> {
             row = inf.inflate(R.layout.message_list_item, null);
         }
 
+        MessageData data = mList.get(position);
+
+        TextView userNameTxt = (TextView) row.findViewById(R.id.userNameTxt);
+        TextView contentTxt = (TextView) row.findViewById(R.id.contentTxt);
+
+        userNameTxt.setText(data.getSendUserData().getUserName());
+        contentTxt.setText(data.getContent());
+
         return row;
     }
 
-    @Override
-    public int getCount() {
-        return 20;
-    }
 }

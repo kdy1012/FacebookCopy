@@ -38,16 +38,16 @@ public class ChattingActivity extends AppCompatActivity {
     private void addMessageDatas() {
         messageDatas.clear();
 
-        messageDatas.add(new MessageData(10, "ㅎㅇㅎㅇ", Calendar.getInstance()));
-        messageDatas.add(new MessageData(10, "ㅇㅇ", Calendar.getInstance()));
-        messageDatas.add(new MessageData(9, "ㅋㅋㅋ", Calendar.getInstance()));
-        messageDatas.add(new MessageData(10, "ㅁㅎ", Calendar.getInstance()));
-        messageDatas.add(new MessageData(10, "ㄹ?", Calendar.getInstance()));
-        messageDatas.add(new MessageData(9, "ㄴㄴ", Calendar.getInstance()));
-        messageDatas.add(new MessageData(10, "ㅇㅋㅇㅋ", Calendar.getInstance()));
-        messageDatas.add(new MessageData(10, "ㅂㅇㅂㅇ", Calendar.getInstance()));
-        messageDatas.add(new MessageData(9, "ㅇㅋ", Calendar.getInstance()));
-        messageDatas.add(new MessageData(10, "ㅇㅇ", Calendar.getInstance()));
+        messageDatas.add(new MessageData(GlobalDatas.loginUserData, "ㅎㅇㅎㅇ", Calendar.getInstance()));
+        messageDatas.add(new MessageData(GlobalDatas.loginUserData, "ㅇㅇ", Calendar.getInstance()));
+//        messageDatas.add(new MessageData(, "ㅋㅋㅋ", Calendar.getInstance()));
+        messageDatas.add(new MessageData(GlobalDatas.loginUserData, "ㅁㅎ", Calendar.getInstance()));
+        messageDatas.add(new MessageData(GlobalDatas.loginUserData, "ㄹ?", Calendar.getInstance()));
+//        messageDatas.add(new MessageData(, "ㄴㄴ", Calendar.getInstance()));
+        messageDatas.add(new MessageData(GlobalDatas.loginUserData, "ㅇㅋㅇㅋ", Calendar.getInstance()));
+        messageDatas.add(new MessageData(GlobalDatas.loginUserData, "ㅂㅇㅂㅇ", Calendar.getInstance()));
+//        messageDatas.add(new MessageData(, "ㅇㅋ", Calendar.getInstance()));
+        messageDatas.add(new MessageData(GlobalDatas.loginUserData, "ㅇㅇ", Calendar.getInstance()));
 
         mAdapter.notifyDataSetChanged();
 
@@ -64,7 +64,7 @@ public class ChattingActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                messageDatas.add(new MessageData(GlobalDatas.loginUserId,
+                messageDatas.add(new MessageData(GlobalDatas.loginUserData,
                         contentEdt.getText().toString(),
                         Calendar.getInstance()));
 
