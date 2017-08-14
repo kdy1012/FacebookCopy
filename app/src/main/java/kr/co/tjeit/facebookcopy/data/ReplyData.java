@@ -1,12 +1,13 @@
 package kr.co.tjeit.facebookcopy.data;
 
+import java.io.Serializable;
 import java.util.Calendar;
 
 /**
  * Created by user on 2017-08-09.
  */
 
-public class ReplyData {
+public class ReplyData implements Serializable {
 
     int replyId;
     int parentReplyId;

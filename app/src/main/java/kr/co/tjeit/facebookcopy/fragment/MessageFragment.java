@@ -50,6 +50,7 @@ public class MessageFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getActivity(), ChattingActivity.class);
+                intent.putExtra("messageData", GlobalDatas.messageDatas.get(position));
                 startActivity(intent);
             }
         });

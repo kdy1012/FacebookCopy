@@ -1,10 +1,12 @@
 package kr.co.tjeit.facebookcopy.data;
 
+import java.io.Serializable;
+
 /**
  * Created by user on 2017-08-08.
  */
 
-public class NewsfeedData {
+public class NewsfeedData implements Serializable {
 
     private String linkUrl;
     private String userImagePath;

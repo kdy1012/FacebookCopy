@@ -1,12 +1,13 @@
 package kr.co.tjeit.facebookcopy.data;
 
+import java.io.Serializable;
 import java.util.Calendar;
 
 /**
  * Created by user on 2017-08-08.
  */
 
-public class NotificationData {
+public class NotificationData implements Serializable {
 
     private String imagePath;
     private String notificaionText;

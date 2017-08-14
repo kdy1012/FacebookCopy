@@ -27,7 +27,8 @@
         <activity android:name=".ReplyListActivity" />
         <activity android:name=".ChattingActivity" />
         <activity android:name=".EditStatusActivity" />
-        <activity android:name=".AddPhotoActivity"></activity>
+        <activity android:name=".AddPhotoActivity" />
+        <activity android:name=".ViewUserInfoActivity"></activity>
     </application>
 
 </manifest>

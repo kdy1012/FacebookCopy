@@ -46,7 +46,7 @@ public class FriendRequestAdapter extends ArrayAdapter<FriendRequestData> {
         TextView nameTxt = (TextView) row.findViewById(R.id.nameTxt);
         TextView friendCountTxt = (TextView) row.findViewById(R.id.friendCountTxt);
 
-        nameTxt.setText(data.getName());
+        nameTxt.setText(data.getRequestUserData().getUserName());
         String countStr = String.format(Locale.KOREA, "%d명", data.getCommonFriendsCount());
         friendCountTxt.setText(countStr);
 

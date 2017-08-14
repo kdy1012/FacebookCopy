@@ -31,17 +31,11 @@ public class GlobalDatas {
         loginUserData= new UserData(10, "조경진", "https://s3.ap-northeast-2.amazonaws.com/slws3/imgs/tje_practice/images.jpg");
 
         friendRequestDatas.clear();
-        friendRequestDatas.add(new FriendRequestData("",7,"고동윤"));
-        friendRequestDatas.add(new FriendRequestData("",1,"권성민"));
-        friendRequestDatas.add(new FriendRequestData("",10,"김현철"));
-        friendRequestDatas.add(new FriendRequestData("",15,"박석영"));
-        friendRequestDatas.add(new FriendRequestData("",8,"박수현"));
-        friendRequestDatas.add(new FriendRequestData("",7,"박영주"));
-        friendRequestDatas.add(new FriendRequestData("",4,"손익상"));
-        friendRequestDatas.add(new FriendRequestData("",8,"이승헌"));
-        friendRequestDatas.add(new FriendRequestData("",10,"이요한"));
-        friendRequestDatas.add(new FriendRequestData("",12,"최종환"));
-        friendRequestDatas.add(new FriendRequestData("",13,"한상열"));
+        friendRequestDatas.add(new FriendRequestData(10,new UserData(1, "고동윤", "")));
+        friendRequestDatas.add(new FriendRequestData(12,new UserData(2, "권성민", "")));
+        friendRequestDatas.add(new FriendRequestData(15,new UserData(3, "김현철", "")));
+        friendRequestDatas.add(new FriendRequestData(31,new UserData(4, "박석영", "")));
+        friendRequestDatas.add(new FriendRequestData(2,new UserData(5, "박수현", "")));
 
 
         notificationDatas.clear();

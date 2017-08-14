@@ -62,8 +62,11 @@ public class ChattingAdapter extends ArrayAdapter<MessageData> {
             opponentMessage.setVisibility(View.VISIBLE);
             // 다른 사람이 보낸 메세지다
 
+            TextView opponentUserNameTxt = (TextView) row.findViewById(R.id.opponentUserNameTxt);
             TextView opponentMessageTxt = (TextView) row.findViewById(R.id.opponentMessageTxt);
             opponentMessageTxt.setText(data.getContent());
+
+            opponentUserNameTxt.setText(data.getSendUserData().getUserName());
         }
 
 

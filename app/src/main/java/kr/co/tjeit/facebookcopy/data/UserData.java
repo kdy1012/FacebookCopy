@@ -1,10 +1,12 @@
 package kr.co.tjeit.facebookcopy.data;
 
+import java.io.Serializable;
+
 /**
  * Created by user on 2017-08-14.
  */
 
-public class UserData {
+public class UserData implements Serializable {
     private int userId; // DB에 몇번째 사용자로 등록되었는지.
     // 몇번째? 의미 없다. => 이 숫자는 절대 중복되지 않음.
     // 10번 사용자 : 조경진 => 절대 다른 10번 사용자는 존재하지 않음.

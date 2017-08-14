@@ -1,31 +1,22 @@
 package kr.co.tjeit.facebookcopy.data;
 
+import java.io.Serializable;
+
 /**
  * Created by user on 2017-08-08.
  */
 
-public class FriendRequestData {
+public class FriendRequestData implements Serializable {
 
-    private String imagePath;
     private int commonFriendsCount;
-    private String name;
+    private UserData requestUserData;
 
     public FriendRequestData() {
-
     }
 
-    public FriendRequestData(String imagePath, int commonFriendsCount, String name) {
-        this.imagePath = imagePath;
+    public FriendRequestData(int commonFriendsCount, UserData requestUserData) {
         this.commonFriendsCount = commonFriendsCount;
-        this.name = name;
-    }
-
-    public String getImagePath() {
-        return imagePath;
-    }
-
-    public void setImagePath(String imagePath) {
-        this.imagePath = imagePath;
+        this.requestUserData = requestUserData;
     }
 
     public int getCommonFriendsCount() {
@@ -36,11 +27,11 @@ public class FriendRequestData {
         this.commonFriendsCount = commonFriendsCount;
     }
 
-    public String getName() {
-        return name;
+    public UserData getRequestUserData() {
+        return requestUserData;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setRequestUserData(UserData requestUserData) {
+        this.requestUserData = requestUserData;
     }
 }
