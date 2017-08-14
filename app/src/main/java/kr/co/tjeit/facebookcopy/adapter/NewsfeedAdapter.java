@@ -63,6 +63,8 @@ public class NewsfeedAdapter extends ArrayAdapter<NewsfeedData> {
             previewLayout.setVisibility(View.VISIBLE);
         }
 
+        TextView writerNameTxt = (TextView) row.findViewById(R.id.writerNameTxt);
+        writerNameTxt.setText(data.getWriterData().getUserName());
 
         String minuteStr = TimeAgoUtil.getTimeAgoString(data.getMinuteAgo());
         TextView minuteAgoTxt = (TextView) row.findViewById(R.id.minuteAgoTxt);
