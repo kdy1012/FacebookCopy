@@ -21,6 +21,7 @@ public class GlobalDatas {
     // null 일 경우에는, 아직 로그인 하지 않은 상태.
     // 객체화 되어있을 경우, 이 객체에 담긴 사람이 로그인한걸로 간주.
 
+    public static List<UserData> userDatas = new ArrayList<>();
     public static List<FriendRequestData> friendRequestDatas = new ArrayList<>();
     public static List<NotificationData> notificationDatas = new ArrayList<>();
     public static List<NewsfeedData> newsfeedDatas = new ArrayList<>();
@@ -30,12 +31,18 @@ public class GlobalDatas {
 
         loginUserData= new UserData(10, "조경진", "https://s3.ap-northeast-2.amazonaws.com/slws3/imgs/tje_practice/images.jpg");
 
+        userDatas.add(new UserData(1, "고동윤", ""));
+        userDatas.add(new UserData(2, "권성민", ""));
+        userDatas.add(new UserData(3, "김현철", ""));
+        userDatas.add(new UserData(4, "박석영", ""));
+        userDatas.add(new UserData(5, "박수현", ""));
+
         friendRequestDatas.clear();
-        friendRequestDatas.add(new FriendRequestData(10,new UserData(1, "고동윤", "")));
-        friendRequestDatas.add(new FriendRequestData(12,new UserData(2, "권성민", "")));
-        friendRequestDatas.add(new FriendRequestData(15,new UserData(3, "김현철", "")));
-        friendRequestDatas.add(new FriendRequestData(31,new UserData(4, "박석영", "")));
-        friendRequestDatas.add(new FriendRequestData(2,new UserData(5, "박수현", "")));
+        friendRequestDatas.add(new FriendRequestData(10, userDatas.get(0)));
+        friendRequestDatas.add(new FriendRequestData(12, userDatas.get(1)));
+        friendRequestDatas.add(new FriendRequestData(15, userDatas.get(2)));
+        friendRequestDatas.add(new FriendRequestData(31, userDatas.get(3)));
+        friendRequestDatas.add(new FriendRequestData(2, userDatas.get(4)));
 
 
         notificationDatas.clear();
@@ -47,23 +54,23 @@ public class GlobalDatas {
 
 
         newsfeedDatas.clear();
-        newsfeedDatas.add(new NewsfeedData("http://naver.com", "", 2, "네이버로 링크를 걸어주는 뉴스피드입니다.", 12));
-        newsfeedDatas.add(new NewsfeedData("http://google.com", "", 10, "구글로 링크를 걸어주는 뉴스피드입니다.", 5));
-        newsfeedDatas.add(new NewsfeedData("", "", 45, "일기처럼 글만 적힌 뉴스피드.", 125));
-        newsfeedDatas.add(new NewsfeedData("", "", 230, "사진 올린 뉴스피드.", 2453));
-        newsfeedDatas.add(new NewsfeedData("", "", 800, "동영상 뉴스피드", 121371));
+        newsfeedDatas.add(new NewsfeedData(userDatas.get(0), "http://naver.com", "", 2, "네이버로 링크를 걸어주는 뉴스피드입니다.", 12));
+        newsfeedDatas.add(new NewsfeedData(userDatas.get(2), "http://google.com", "", 10, "구글로 링크를 걸어주는 뉴스피드입니다.", 5));
+        newsfeedDatas.add(new NewsfeedData(userDatas.get(2), "", "", 45, "일기처럼 글만 적힌 뉴스피드.", 125));
+        newsfeedDatas.add(new NewsfeedData(userDatas.get(2), "", "", 230, "사진 올린 뉴스피드.", 2453));
+        newsfeedDatas.add(new NewsfeedData(userDatas.get(1), "", "", 800, "동영상 뉴스피드", 121371));
 
 
         messageDatas.clear();
-        messageDatas.add(new MessageData(new UserData(1, "고동윤", ""), "고동윤입니다.",
+        messageDatas.add(new MessageData(userDatas.get(0), "고동윤입니다.",
                 Calendar.getInstance()));
-        messageDatas.add(new MessageData(new UserData(2, "권성민", ""), "권성민입니다.",
+        messageDatas.add(new MessageData(userDatas.get(1), "권성민입니다.",
                 Calendar.getInstance()));
-        messageDatas.add(new MessageData(new UserData(3, "김현철", ""), "김현철입니다.",
+        messageDatas.add(new MessageData(userDatas.get(2), "김현철입니다.",
                 Calendar.getInstance()));
-        messageDatas.add(new MessageData(new UserData(4, "박석영", ""), "박석영입니다.",
+        messageDatas.add(new MessageData(userDatas.get(3), "박석영입니다.",
                 Calendar.getInstance()));
-        messageDatas.add(new MessageData(new UserData(5, "박수현", ""), "박수현입니다.",
+        messageDatas.add(new MessageData(userDatas.get(4), "박수현입니다.",
                 Calendar.getInstance()));
 
     }

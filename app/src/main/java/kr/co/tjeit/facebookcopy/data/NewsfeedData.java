@@ -8,6 +8,7 @@ import java.io.Serializable;
 
 public class NewsfeedData implements Serializable {
 
+    private UserData writerData;
     private String linkUrl;
     private String userImagePath;
     private int minuteAgo;
@@ -17,12 +18,21 @@ public class NewsfeedData implements Serializable {
     public NewsfeedData() {
     }
 
-    public NewsfeedData(String linkUrl, String userImagePath, int minuteAgo, String contentText, int likeCount) {
+    public NewsfeedData(UserData writerData, String linkUrl, String userImagePath, int minuteAgo, String contentText, int likeCount) {
+        this.writerData = writerData;
         this.linkUrl = linkUrl;
         this.userImagePath = userImagePath;
         this.minuteAgo = minuteAgo;
         this.contentText = contentText;
         this.likeCount = likeCount;
+    }
+
+    public UserData getWriterData() {
+        return writerData;
+    }
+
+    public void setWriterData(UserData writerData) {
+        this.writerData = writerData;
     }
 
     public String getLinkUrl() {
